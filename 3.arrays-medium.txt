@@ -1,0 +1,48 @@
+1) LONGEST SUBARRAY WITH SUM K  
+
+ALGORITHM - BRUTE FORCE  
+1. Initialize `maxLen = 0`.  
+2. Use two nested loops:  
+   - Outer loop from `i = 0` to `n-1`.  
+   - Initialize `currentSum = 0`.  
+   - Inner loop from `j = i` to `n-1`:  
+     - Add `arr[j]` to `currentSum`.  
+     - If `currentSum == k`, update `maxLen = max(maxLen, j - i + 1)`.  
+3. Return `maxLen`.  
+
+TIME COMPLEXITY: O(N²)  
+SPACE COMPLEXITY: O(1)  
+
+----------------------------------------  
+
+ALGORITHM - OPTIMAL (Using Hash Map)  
+1. Initialize `prefixSum = 0` and an empty hash map `prefixMap`.  
+2. Initialize `maxLen = 0`.  
+3. Traverse the array from `i = 0` to `n-1`:  
+   - Add `arr[i]` to `prefixSum`.  
+   - If `prefixSum == k`, update `maxLen = i + 1`.  
+   - If `prefixSum - k` exists in `prefixMap`, update:  
+     `maxLen = max(maxLen, i - prefixMap[prefixSum - k])`.  
+   - If `prefixSum` is not in `prefixMap`, store it with its index `i`.  
+4. Return `maxLen`.  
+
+TIME COMPLEXITY: O(N)  
+SPACE COMPLEXITY: O(N)  
+
+----------------------------------------  
+
+ALGORITHM - OPTIMAL (Using Two Pointers) - Only for Positive Numbers  
+1. Initialize two pointers `start = 0` and `end = 0`.  
+2. Initialize `currentSum = 0` and `maxLen = 0`.  
+3. Traverse the array while `end < n`:  
+   - Add `arr[end]` to `currentSum`.  
+   - While `currentSum > k`, subtract `arr[start]` and increment `start`.  
+   - If `currentSum == k`, update `maxLen = max(maxLen, end - start + 1)`.  
+   - Increment `end`.  
+4. Return `maxLen`.  
+
+TIME COMPLEXITY: O(N)  
+SPACE COMPLEXITY: O(1)  
+
+----------------------------------------  
+
