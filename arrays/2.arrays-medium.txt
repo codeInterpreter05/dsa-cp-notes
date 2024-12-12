@@ -285,7 +285,7 @@ SPACE COMPLEXITY: O(1) (excluding sorting space)
 ----------------------------------------  
 
 ALGORITHM - OPTIMAL (Using HashSet)  
-1. Insert all elements into a HashSet.  
+1. Insert all elements into a HashSet / Unordered Set.  
 2. Initialize `longestStreak = 0`.  
 3. Traverse each element in the array:  
    - If `num - 1` is not in the HashSet, `num` is the start of a sequence.  
