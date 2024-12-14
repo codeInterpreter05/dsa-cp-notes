@@ -300,5 +300,143 @@ SPACE COMPLEXITY: O(N) (for storing elements in HashSet)
 
 ----------------------------------------  
 
+9) SET MATRIX ZEROES  
+
+ALGORITHM - BRUTE FORCE (O(N³))  
+1. Traverse every element in the matrix.  
+2. If `matrix[i][j] == 0`, mark all elements in row `i` and column `j` as `-1` (or any marker not present in the matrix).  
+3. Traverse the matrix again:  
+   - If any element is `-1`, set it to `0`.  
+
+TIME COMPLEXITY: O(N³)  
+SPACE COMPLEXITY: O(1)  
+
+----------------------------------------  
+
+ALGORITHM - USING TEMP MATRIX (O(M*N) with O(M*N) Space)  
+1. Create a temporary matrix of size `M*N`.  
+2. Traverse the original matrix:  
+   - If `matrix[i][j] == 0`, mark the corresponding row and column in the temporary matrix.  
+3. Copy the temporary matrix back to the original matrix.  
+
+TIME COMPLEXITY: O(M*N)  
+SPACE COMPLEXITY: O(M*N)  
+
+----------------------------------------  
+
+ALGORITHM - USING ROW & COLUMN ARRAYS (O(M*N) with O(M+N) Space)  
+1. Create two arrays `row[M]` and `col[N]` initialized to 0.  
+2. Traverse the matrix:  
+   - If `matrix[i][j] == 0`, set `row[i] = 1` and `col[j] = 1`.  
+3. Traverse the matrix again:  
+   - If `row[i] == 1` or `col[j] == 1`, set `matrix[i][j] = 0`.  
+
+TIME COMPLEXITY: O(M*N)  
+SPACE COMPLEXITY: O(M+N)  
+
+----------------------------------------  
+
+ALGORITHM - OPTIMAL (Using First Row & Column as Markers)  
+1. Use two flags `firstRowZero` and `firstColZero` to check if the first row or column has zeros.  
+2. Traverse the matrix:  
+   - If `matrix[i][j] == 0`, set `matrix[i][0] = 0` and `matrix[0][j] = 0`.  
+3. Traverse the matrix again (excluding the first row and column):  
+   - If `matrix[i][0] == 0` or `matrix[0][j] == 0`, set `matrix[i][j] = 0`.  
+4. Update the first row and first column if needed.  
+
+TIME COMPLEXITY: O(M*N)  
+SPACE COMPLEXITY: O(1)  
+
+----------------------------------------  
+
+10) ROTATE MATRIX BY 90 DEGREES  
+
+ALGORITHM - BRUTE FORCE (Using Extra Matrix)  
+1. Create a new matrix `result` of the same size.  
+2. Traverse each element `matrix[i][j]`:  
+   - Set `result[j][N-1-i] = matrix[i][j]`.  
+3. Copy `result` back to the original matrix.  
+
+TIME COMPLEXITY: O(N²)  
+SPACE COMPLEXITY: O(N²)  
+
+----------------------------------------  
+
+ALGORITHM - OPTIMAL (In-Place Rotation)  
+1. Transpose the matrix:  
+   - Swap `matrix[i][j]` with `matrix[j][i]` for all `i < j`.  
+2. Reverse each row of the matrix.  
+
+TIME COMPLEXITY: O(N²)  
+SPACE COMPLEXITY: O(1)  
+
+----------------------------------------  
+
+11) PRINT MATRIX IN A SPIRAL MANNER  
+
+ALGORITHM - OPTIMAL (Layer-by-Layer Traversal)  
+1. Initialize `top = 0`, `bottom = M-1`, `left = 0`, and `right = N-1`.  
+2. While `top <= bottom` and `left <= right`:  
+   - Traverse from `left` to `right` (left to right on `top` row).  
+   - Increment `top` by 1.  
+   - Traverse from `top` to `bottom` (top to bottom on `right` column).  
+   - Decrement `right` by 1.  
+   - If `top <= bottom`:  
+     - Traverse from `right` to `left` (right to left on `bottom` row).  
+     - Decrement `bottom` by 1.  
+   - If `left <= right`:  
+     - Traverse from `bottom` to `top` (bottom to top on `left` column).  
+     - Increment `left` by 1.  
+
+TIME COMPLEXITY: O(M*N)  
+SPACE COMPLEXITY: O(1)  
+
+----------------------------------------  
+
+12) COUNT SUBARRAYS WITH SUM K  
+
+ALGORITHM - BRUTE FORCE (Three Loops)  
+1. Initialize `count = 0`.  
+2. Use three nested loops:  
+   - Outer loop `i` from 0 to N-1 (starting index).  
+   - Middle loop `j` from `i` to N-1 (ending index).  
+   - Inner loop `k` from `i` to `j`:  
+     - Sum elements from `arr[k]` to `arr[j]`.  
+     - If the sum equals `K`, increment `count`.  
+
+TIME COMPLEXITY: O(N³)  
+SPACE COMPLEXITY: O(1)  
+
+----------------------------------------  
+
+ALGORITHM - BETTER (Two Loops)  
+1. Initialize `count = 0`.  
+2. Use two nested loops:  
+   - Outer loop `i` from 0 to N-1 (starting index).  
+   - Initialize `currentSum = 0`.  
+   - Inner loop `j` from `i` to N-1 (ending index):  
+     - Add `arr[j]` to `currentSum`.  
+     - If `currentSum == K`, increment `count`.  
+
+TIME COMPLEXITY: O(N²)  
+SPACE COMPLEXITY: O(1)  
+
+----------------------------------------  
+
+ALGORITHM - OPTIMAL (Prefix Sum + HashMap)  
+1. Initialize `count = 0` and `prefixSum = 0`.  
+2. Create a HashMap `prefixMap` with default value 0.  
+3. Traverse the array:  
+   - Add `arr[i]` to `prefixSum`.  
+   - If `prefixSum == K`, increment `count`.  
+   - If `(prefixSum - K)` exists in `prefixMap`, add its frequency to `count`.  
+   - Increment `prefixMap[prefixSum]`.  
+
+TIME COMPLEXITY: O(N)  
+SPACE COMPLEXITY: O(N)  
+
+----------------------------------------   
+
+
 
 
