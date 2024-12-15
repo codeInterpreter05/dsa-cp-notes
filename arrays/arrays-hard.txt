@@ -1,0 +1,92 @@
+1) PASCAL'S TRIANGLE  
+
+----------------------------------------  
+
+VARIANT 1: Find Element at Rth Row and Cth Column  
+
+ALGORITHM - BRUTE FORCE (Binomial Coefficient)  
+1. Use the formula `nCr = n! / (r! * (n - r)!)` to calculate the element.  
+
+TIME COMPLEXITY: O(R) (since factorial calculations take linear time)  
+SPACE COMPLEXITY: O(1)  
+
+----------------------------------------  
+
+VARIANT 2: Print the Nth Row  
+
+ALGORITHM - BRUTE FORCE (Repeated nCr Calculation)  
+1. Initialize `row = []`.  
+2. Loop from `col = 0` to `N`:  
+   - Compute `nCr` using factorials.  
+   - Append result to `row`.  
+3. Print `row`.  
+
+TIME COMPLEXITY: O(N * R)  
+SPACE COMPLEXITY: O(N)  
+
+----------------------------------------  
+
+ALGORITHM - OPTIMAL (Direct Multiplication)  
+1. Initialize `row = [1]`.  
+2. Loop from `i = 1` to `N`:  
+   - Use `row[i] = row[i-1] * (N - i + 1) / i`.  
+   - Append result to `row`.  
+3. Print `row`.  
+
+TIME COMPLEXITY: O(N)  
+SPACE COMPLEXITY: O(N)  
+
+----------------------------------------  
+
+VARIANT 3: Print Entire Pascal's Triangle  
+
+ALGORITHM  
+1. Initialize an empty list `triangle`.  
+2. Loop from `i = 0` to `N-1`:  
+   - Initialize `row = [1]`.  
+   - Loop from `j = 1` to `i`:  
+     - Calculate `row[j] = triangle[i-1][j-1] + triangle[i-1][j]`.  
+   - Append `row` to `triangle`.  
+3. Print `triangle`.  
+
+TIME COMPLEXITY: O(N²)  
+SPACE COMPLEXITY: O(N²)  
+
+----------------------------------------
+
+2) MAJORITY ELEMENTS (Appears More Than N/3 Times)   
+
+ALGORITHM - BRUTE FORCE (Count Occurrences)  
+1. Loop through the array with index `i` from 0 to N-1.  
+2. For each element `arr[i]`, count its occurrences in the entire array.  
+3. If the count exceeds `N/3`, mark it as a majority element.  
+4. Repeat for all elements.  
+
+TIME COMPLEXITY: O(N²)  
+SPACE COMPLEXITY: O(1)  
+
+----------------------------------------  
+
+ALGORITHM - USING MAP (HashMap for Frequency Count)  
+1. Initialize an empty HashMap `freqMap` to store the frequency of each element.  
+2. Traverse the array and for each element `arr[i]`, increment its count in the `freqMap`.  
+3. After the traversal, iterate through the `freqMap` and check if any element has a count greater than `N/3`.  
+4. If found, mark it as a majority element.  
+
+TIME COMPLEXITY: O(N)  
+SPACE COMPLEXITY: O(N)  
+
+----------------------------------------  
+
+ALGORITHM - OPTIMAL (Boyer-Moore Voting Algorithm for Two Majority Elements)  
+1. Initialize two variables `candidate1` and `candidate2` with None, and counters `count1` and `count2` as 0.  
+2. Traverse the array:  
+   - If `arr[i] == candidate1`, increment `count1`.  
+   - Else if `arr[i] == candidate2`, increment `count2`.  
+   - Else if `count1 == 0`, assign `candidate1 = arr[i]` and `count1 = 1`.  
+   - Else if `count2 == 0`, assign `candidate2 = arr[i]` and `count2 = 1`.  
+   - Else decrement both `count1` and `count2`.  
+3. After the traversal, verify if `candidate1` and `candidate2` appear more than `N/3` times by counting their occurrences in the array.  
+
+TIME COMPLEXITY: O(N)  
+SPACE COMPLEXITY: O(1)  
