@@ -156,7 +156,7 @@ SPACE COMPLEXITY: O(N)
 
 ----------------------------------------  
 
-16) 4 SUM PROBLEM    
+4) 4 SUM PROBLEM    
 
 ALGORITHM - BRUTE FORCE (Four Loops)  
 1. Loop through the array with index `i` from 0 to N-1 (first element).  
@@ -205,5 +205,52 @@ ALGORITHM - USING HASHSET (Optimal with HashSet for Uniqueness)
 TIME COMPLEXITY: O(N³)  
 SPACE COMPLEXITY: O(N)  
 
+-----------------------------------------------------------
 
+5) COUNT SUBARRAYS WITH XOR K 
 
+ALGORITHM - BRUTE FORCE (Three Loops)
+
+1. Initialize `count = 0`.
+2. Use three nested loops:
+   - Outer loop `i` from `0` to `N-1` (starting index).
+   - Middle loop `j` from `i` to `N-1` (ending index).
+   - Inner loop `k` from `i` to `j`:
+     * XOR all elements from `arr[k]` to `arr[j]`.
+     * If the XOR equals `K`, increment `count`.
+3. Return `count`.
+
+TIME COMPLEXITY: O(N³)  
+SPACE COMPLEXITY: O(1)
+
+---------------------------------------------------
+
+ALGORITHM - BETTER (Two Loops)
+
+1. Initialize `count = 0`.
+2. Use two nested loops:
+   - Outer loop `i` from `0` to `N-1` (starting index).
+   - Initialize `currentXOR = 0`.
+   - Inner loop `j` from `i` to `N-1` (ending index):
+     * XOR `arr[j]` with `currentXOR`.
+     * If `currentXOR == K`, increment `count`.
+3. Return `count`.
+
+TIME COMPLEXITY: O(N²)  
+SPACE COMPLEXITY: O(1)
+
+------------------------------------------------------
+
+ALGORITHM - OPTIMAL (Prefix XOR + HashMap)
+
+1. Initialize `count = 0` and `prefixXOR = 0`.
+2. Create a HashMap `prefixMap` with default value `0`.
+3. Traverse the array:
+   - XOR `arr[i]` with `prefixXOR`.
+   - If `prefixXOR == K`, increment `count`.
+   - If `(prefixXOR ^ K)` exists in `prefixMap`, add its frequency to `count`.
+   - Increment `prefixMap[prefixXOR]`.
+4. Return `count`.
+
+TIME COMPLEXITY: O(N)  
+SPACE COMPLEXITY: O(N)
