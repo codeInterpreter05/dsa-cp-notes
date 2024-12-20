@@ -254,3 +254,35 @@ ALGORITHM - OPTIMAL (Prefix XOR + HashMap)
 
 TIME COMPLEXITY: O(N)  
 SPACE COMPLEXITY: O(N)
+
+----------------------------------------------------------
+
+6) MERGE OVERLAPPING INTERVALS
+
+----------------------------------------------------------
+
+ALGORITHM - BRUTE FORCE (Check Pairwise Overlaps)
+
+1. Sort the intervals based on their starting time.
+2. For each interval, compare it with all others to check for overlaps:
+   - If `interval[i].end >= interval[j].start`, merge the intervals.
+   - Update the `start` and `end` values of the merged interval accordingly.
+3. Continue until all overlaps are resolved.
+4. Return the list of merged intervals.
+
+TIME COMPLEXITY: O(N²)  
+SPACE COMPLEXITY: O(N) (to store merged intervals)
+
+---------------------------------------------------
+
+ALGORITHM - OPTIMAL (Sorting + Iterative Merge)
+
+1. Sort the intervals based on their starting time.
+2. Initialize an empty `merged` list.
+3. Traverse the sorted intervals:
+   - If `merged` is empty or the current interval does not overlap with the last interval in `merged`, add the current interval to `merged`.
+   - Else, update the end time of the last interval in `merged` to the maximum end time of the overlapping intervals.
+4. Return the `merged` list.
+
+TIME COMPLEXITY: O(N log N) (due to sorting)  
+SPACE COMPLEXITY: O(N) (to store merged intervals)
