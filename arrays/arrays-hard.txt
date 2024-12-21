@@ -259,8 +259,6 @@ SPACE COMPLEXITY: O(N)
 
 6) MERGE OVERLAPPING INTERVALS
 
-----------------------------------------------------------
-
 ALGORITHM - BRUTE FORCE (Check Pairwise Overlaps)
 
 1. Sort the intervals based on their starting time.
@@ -286,3 +284,138 @@ ALGORITHM - OPTIMAL (Sorting + Iterative Merge)
 
 TIME COMPLEXITY: O(N log N) (due to sorting)  
 SPACE COMPLEXITY: O(N) (to store merged intervals)
+
+--------------------------------------------------------------
+
+7) MERGE TWO SORTED ARRAYS WITHOUT EXTRA SPACE
+
+ALGORITHM - BRUTE FORCE (Using Third Array + Sort)
+
+1. Create a third array `result[]` of size `N + M`.
+2. Copy all elements of the first array `arr1[]` into `result[]`.
+3. Copy all elements of the second array `arr2[]` into `result[]`.
+4. Sort the `result[]` array.
+5. Copy the first `N` elements into `arr1[]` and the remaining `M` elements into `arr2[]`.
+
+TIME COMPLEXITY: O((N + M) * log(N + M))  
+SPACE COMPLEXITY: O(N + M)
+
+----------------------------------------------------------------
+
+ALGORITHM - BETTER (Using Two Pointers in a Third Array)
+
+1. Create a third array `result[]` of size `N + M`.
+2. Initialize two pointers:  
+   - `i = 0` (pointing to the first array).  
+   - `j = 0` (pointing to the second array).  
+3. Traverse both arrays:  
+   - If `arr1[i] <= arr2[j]`, add `arr1[i]` to `result[]` and increment `i`.
+   - Else, add `arr2[j]` to `result[]` and increment `j`.
+4. Copy any remaining elements of `arr1[]` or `arr2[]` into `result[]`.
+5. Copy the first `N` elements into `arr1[]` and the remaining `M` elements into `arr2[]`.
+
+TIME COMPLEXITY: O(N + M)  
+SPACE COMPLEXITY: O(N + M)
+
+------------------------------------------------------------------
+
+ALGORITHM - BETTER (Insertion Sort on the Two Arrays)
+
+1. Start traversing `arr1[]` from the beginning and `arr2[]` from the end.
+2. For every element in `arr1[]`, compare it with the smallest element in `arr2[]`.
+3. If `arr1[i] > arr2[0]`, swap the elements.
+4. After swapping, sort `arr2[]` to place the smallest element at the start.
+
+TIME COMPLEXITY: O(N * M)  
+SPACE COMPLEXITY: O(1)
+
+------------------------------------------------------------------
+
+ALGORITHM - OPTIMAL (Gap Method) (Shell Sort)
+
+1. Combine both arrays conceptually into a single array of size `N + M`.
+2. Initialize the gap as `(N + M) / 2` and reduce it by half in every iteration.
+3. Compare elements in the two arrays separated by the gap:
+   - If the element in `arr1[]` is greater than `arr2[]`, swap them.
+   - Adjust the pointers for the next comparison based on the gap.
+4. Repeat until the gap becomes 0.
+
+TIME COMPLEXITY: O((N + M) * log(N + M))  
+SPACE COMPLEXITY: O(1)
+
+-----------------------------------------------------------------------
+
+8) FIND THE REPEATING AND MISSING NUMBER
+
+ALGORITHM - BRUTE FORCE (Nested Loops - O(N²))
+
+1. Initialize variables `missing` and `repeating` to -1.
+2. Use two nested loops:
+   - Outer loop `i` from 1 to N:
+     - Count the occurrences of `i` in the array using the inner loop.
+     - If `count == 0`, it is the missing number.
+     - If `count > 1`, it is the repeating number.
+3. Return the `missing` and `repeating` numbers.
+
+TIME COMPLEXITY: O(N²)  
+SPACE COMPLEXITY: O(1)
+
+-----------------------------------------------------------------
+
+ALGORITHM - BRUTE FORCE (Using Sorting - O(N * log N))
+
+1. Sort the array.
+2. Traverse the sorted array:
+   - Check if the difference between consecutive elements is greater than 1.
+   - If yes, identify the missing number.
+   - If two consecutive elements are the same, identify the repeating number.
+3. Handle edge cases (e.g., missing or repeating number at the ends).
+
+TIME COMPLEXITY: O(N * log N) (due to sorting)  
+SPACE COMPLEXITY: O(1)
+
+-----------------------------------------------------------------
+
+ALGORITHM - BETTER (Using Frequency Array)
+
+1. Create a frequency array `freq[]` of size N initialized to 0.
+2. Traverse the input array:
+   - Increment `freq[arr[i]]` for each element in the array.
+3. Traverse the frequency array:
+   - If `freq[i] == 0`, it is the missing number.
+   - If `freq[i] > 1`, it is the repeating number.
+
+TIME COMPLEXITY: O(N)  
+SPACE COMPLEXITY: O(N)
+
+---------------------------------------------------------------------
+
+ALGORITHM - OPTIMAL (Mathematical Approach)
+
+1. Calculate the sum and sum of squares of the first N natural numbers:
+   - `Sum_N = N * (N + 1) / 2`
+   - `Sum_Squares_N = N * (N + 1) * (2 * N + 1) / 6`
+2. Calculate the sum and sum of squares of the elements in the array:
+   - `Sum_Array = Σ(arr[i])`
+   - `Sum_Squares_Array = Σ(arr[i]²)`
+3. Use the equations to find the repeating and missing numbers:
+   - Let `X` = Missing Number and `Y` = Repeating Number.
+   - `X - Y = Sum_N - Sum_Array`
+   - `X² - Y² = Sum_Squares_N - Sum_Squares_Array`
+   - Solve for `X` and `Y`.
+
+TIME COMPLEXITY: O(N)  
+SPACE COMPLEXITY: O(1)
+
+------------------------------------------------------------------
+
+ALGORITHM - OPTIMAL (Using XOR)
+
+1. Initialize `XOR = 0` and calculate `XOR` for all elements in the array and all numbers from 1 to N.
+2. The result of `XOR` will be `X ^ Y` (missing number XOR repeating number).
+3. Find the rightmost set bit in `XOR`.
+4. Divide the array and range 1 to N into two groups based on this bit and calculate XOR for each group.
+5. The two results are the missing and repeating numbers.
+
+TIME COMPLEXITY: O(N)  
+SPACE COMPLEXITY: O(1)
