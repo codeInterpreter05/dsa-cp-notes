@@ -1,4 +1,4 @@
-1) COUNT DIGITS + REVERSE A NUMBER + PALINDROME
+1) COUNT DIGITS / REVERSE A NUMBER / PALINDROME
 
 ALGORITHM
 while(num)
@@ -23,6 +23,7 @@ Loop while i <= num:
 TIME COMPLEXITY: O(N)
 SPACE COMPLEXITY: O(1)
 
+----------------------------------
 
 ALGORITHM - OPTIMIZED
 Initialize i = 1
@@ -50,6 +51,7 @@ Loop from i = 2 up to num - 1:
 TIME COMPLEXITY: O(N)
 SPACE COMPLEXITY: O(1)
 
+------------------------------------------------
 
 ALGORITHM - OPTIMIZED (Up to Square Root)
 If num < 2, then it is not prime
@@ -63,6 +65,7 @@ If no divisors are found, num is prime
 TIME COMPLEXITY: O(√N)
 SPACE COMPLEXITY: O(1)
 
+----------------------------------------------------------
 
 ALGORITHM - SIEVE OF ERATOSTHENES (for precomputing prime numbers up to N)
 Create an array isPrime of size N + 1 and initialize all entries as True
@@ -88,6 +91,7 @@ Return gcd
 TIME COMPLEXITY: O(min(a, b))
 SPACE COMPLEXITY: O(1)
 
+---------------------------------------
 
 ALGORITHM - EUCLIDEAN METHOD
 While b is not zero:
