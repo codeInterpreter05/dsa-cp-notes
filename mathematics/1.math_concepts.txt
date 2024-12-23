@@ -102,6 +102,7 @@ Return a
 TIME COMPLEXITY: O(log(min(a, b)))
 SPACE COMPLEXITY: O(1)
 
+-----------------------------------------------
 
 ALGORITHM - EXTENDED EUCLIDEAN METHOD
 If b is 0, return (a, 1, 0)
@@ -128,6 +129,7 @@ While num is greater than 1:
 TIME COMPLEXITY: O(N)
 SPACE COMPLEXITY: O(1)
 
+---------------------------------------------
 
 ALGORITHM - OPTIMIZED
 While num is divisible by 2:
@@ -155,6 +157,7 @@ Return result
 TIME COMPLEXITY: O(n)
 SPACE COMPLEXITY: O(1)
 
+------------------------------------------------
 
 ALGORITHM - BINARY EXPONENTIATION (Exponentiation by Squaring)
 Initialize result = 1
