@@ -419,3 +419,124 @@ ALGORITHM - OPTIMAL (Using XOR)
 
 TIME COMPLEXITY: O(N)  
 SPACE COMPLEXITY: O(1)
+
+-----------------------------------------------------------------
+
+9) COUNT INVERSIONS
+
+ALGORITHM - BRUTE FORCE (Nested Loops - O(N²))
+
+1. Initialize `count = 0`.
+2. Use two nested loops:
+   - Outer loop `i` from 0 to N-1.
+   - Inner loop `j` from `i+1` to N:
+     - If `arr[i] > arr[j]`, increment `count`.
+3. Return `count` as the total number of inversions.
+
+TIME COMPLEXITY: O(N²)  
+SPACE COMPLEXITY: O(1)
+
+---------------------------------------------------------------------
+
+ALGORITHM - OPTIMAL (Using Modified Merge Sort - O(N * log N))
+
+1. Define a recursive function `mergeSort()` that:
+   - Divides the array into two halves.
+   - Recursively sorts each half.
+   - Merges the two halves while counting inversions.
+2. During the merge step:
+   - If `left[i] > right[j]`, it means all remaining elements in the left half will also form inversions with `right[j]`.
+   - Increment the inversion count by the number of remaining elements in the left half.
+3. Return the total inversion count.
+
+TIME COMPLEXITY: O(N * log N)  
+SPACE COMPLEXITY: O(N)
+
+-----------------------------------------------------------
+
+10) REVERSE PAIRS
+
+ALGORITHM - BRUTE FORCE (Nested Loops - O(N²))
+
+1. Initialize `count = 0`.
+2. Use two nested loops:
+   - Outer loop `i` from 0 to N-1.
+   - Inner loop `j` from `i+1` to N:
+     - If `arr[i] > 2 * arr[j]`, increment `count`.
+3. Return `count` as the total number of reverse pairs.
+
+TIME COMPLEXITY: O(N²)  
+SPACE COMPLEXITY: O(1)
+
+------------------------------------------------------------
+
+ALGORITHM - OPTIMAL (Modified Merge Sort - O(N * log N))
+
+1. Define a recursive function `mergeSort()` that:
+   - Divides the array into two halves.
+   - Recursively sorts each half.
+   - Counts the reverse pairs during the merge step.
+2. During the merge step:
+   - Use two pointers `i` and `j` for the left and right halves.
+   - For every element in the left half, find the first element in the right half such that `arr[i] > 2 * arr[j]`.
+   - Increment the count by the number of remaining elements in the right half.
+3. Merge the two halves in sorted order.
+4. Return the total reverse pair count.
+
+TIME COMPLEXITY: O(N * log N)  
+SPACE COMPLEXITY: O(N)
+
+--------------------------------------------------------------
+
+11) MAXIMUM SUBARRAY PRODUCT
+
+ALGORITHM - BRUTE FORCE (O(N³))
+
+1. Initialize `maxProduct = -∞`.
+2. Use three nested loops:
+   - Outer loop `i` from 0 to N-1 (start index).
+   - Middle loop `j` from `i` to N-1 (end index).
+   - Inner loop `k` from `i` to `j`:
+     - Compute the product of elements from index `i` to `j`.
+     - Update `maxProduct` if the current product is greater.
+3. Return `maxProduct` as the maximum subarray product.
+
+TIME COMPLEXITY: O(N³)  
+SPACE COMPLEXITY: O(1)
+
+---------------------------------------------------------------
+
+ALGORITHM - BETTER (O(N²))
+
+1. Initialize `maxProduct = -∞`.
+2. Use two nested loops:
+   - Outer loop `i` from 0 to N-1 (start index).
+   - Inner loop `j` from `i` to N-1 (end index):
+     - Compute the product of elements from index `i` to `j` in a single pass.
+     - Update `maxProduct` if the current product is greater.
+3. Return `maxProduct` as the maximum subarray product.
+
+TIME COMPLEXITY: O(N²)  
+SPACE COMPLEXITY: O(1)
+
+------------------------------------------------------------
+
+ALGORITHM - OPTIMAL (O(N))
+
+1. Initialize:
+   - `maxProduct = arr[0]`
+   - `currentMax = arr[0]`
+   - `currentMin = arr[0]`
+2. Traverse the array from index 1 to N-1:
+   - If `arr[i] < 0`, swap `currentMax` and `currentMin`.
+   - Update `currentMax = max(arr[i], currentMax * arr[i])`.
+   - Update `currentMin = min(arr[i], currentMin * arr[i])`.
+   - Update `maxProduct = max(maxProduct, currentMax)`.
+3. Return `maxProduct`.
+
+TIME COMPLEXITY: O(N)  
+SPACE COMPLEXITY: O(1)
+
+
+
+
