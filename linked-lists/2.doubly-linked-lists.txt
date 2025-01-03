@@ -1,0 +1,19 @@
+TRAVERSAL
+
+1. Traverse the Linked List (Forward)  
+   Algorithm:  
+     1. Start from the head node.  
+     2. While the current node is not NULL:  
+         - Process the data of the current node (e.g., print it).  
+         - Move to the next node by updating the pointer to `current = current->next`.  
+   Time Complexity: O(N) (where N is the number of nodes in the list)  
+   Space Complexity: O(1)  
+
+2. Traverse the Linked List (Backward)  
+   Algorithm:  
+     1. Start from the tail node.  
+     2. While the current node is not NULL:  
+         - Process the data of the current node (e.g., print it).  
+         - Move to the previous node by updating the pointer to `current = current->prev`.  
+   Time Complexity: O(N)  
+   Space Complexity: O(1)  
