@@ -1,4 +1,4 @@
-TRAVERSAL
+TRAVERSAL IN DOUBLY LINKED LISTS
 
 1. Traverse the Linked List (Forward)  
    Algorithm:  
