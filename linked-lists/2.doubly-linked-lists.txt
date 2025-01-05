@@ -17,3 +17,73 @@ TRAVERSAL IN DOUBLY LINKED LISTS
          - Move to the previous node by updating the pointer to `current = current->prev`.  
    Time Complexity: O(N)  
    Space Complexity: O(1)  
+
+----------------------------------------------------
+
+INSERTIING A NODE
+
+---
+
+1. Insert at the Beginning  
+   Algorithm:  
+     1. Create a new node with the given data.  
+     2. If the list is empty (`head == NULL`):  
+         - Set `head = newNode` and `tail = newNode`.  
+         - Update `newNode->next = NULL` and `newNode->prev = NULL`.  
+     3. Else:  
+         - Set `newNode->next = head`.  
+         - Set `head->prev = newNode`.  
+         - Update `head = newNode`.  
+   Time Complexity: O(1)  
+   Space Complexity: O(1)  
+
+2. Insert at the End  
+   Algorithm:  
+     1. Create a new node with the given data.  
+     2. If the list is empty (`head == NULL`):  
+         - Set `head = newNode` and `tail = newNode`.  
+         - Update `newNode->next = NULL` and `newNode->prev = NULL`.  
+     3. Else:  
+         - Set `tail->next = newNode`.  
+         - Set `newNode->prev = tail`.  
+         - Update `tail = newNode`.  
+   Time Complexity: O(1)  
+   Space Complexity: O(1)  
+
+3. Insert at a Specific Position  
+   Algorithm:  
+     1. Traverse the list to find the desired position.  
+     2. Create a new node with the given data.  
+     3. Update pointers:  
+         - Set `newNode->next = current->next`.  
+         - Set `current->next->prev = newNode`.  
+         - Set `current->next = newNode`.  
+         - Set `newNode->prev = current`.  
+   Time Complexity: O(N)  
+   Space Complexity: O(1)  
+
+4. Insert After a Given Node  
+   Algorithm:  
+     1. Find the node after which insertion is required.  
+     2. Create a new node with the given data.  
+     3. Update pointers:  
+         - Set `newNode->next = givenNode->next`.  
+         - If `givenNode->next` is not NULL, update `givenNode->next->prev = newNode`.  
+         - Set `givenNode->next = newNode`.  
+         - Set `newNode->prev = givenNode`.  
+   Time Complexity: O(1)  
+   Space Complexity: O(1)  
+
+5. Insert Before a Given Node  
+   Algorithm:  
+     1. Find the node before which insertion is required.  
+     2. Create a new node with the given data.  
+     3. Update pointers:  
+         - Set `newNode->prev = givenNode->prev`.  
+         - If `givenNode->prev` is not NULL, update `givenNode->prev->next = newNode`.  
+         - Set `givenNode->prev = newNode`.  
+         - Set `newNode->next = givenNode`.  
+   Time Complexity: O(1)  
+   Space Complexity: O(1)  
+
+------------------------------------------------
