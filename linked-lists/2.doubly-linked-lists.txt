@@ -86,7 +86,7 @@ INSERTIING A NODE
 
 ------------------------------------------------
 
-DELETION OPERATIONS
+DELETING A NODE
 
 1. Delete from the Beginning  
    Algorithm:  
