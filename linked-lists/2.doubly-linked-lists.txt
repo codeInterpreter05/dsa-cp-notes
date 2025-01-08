@@ -141,3 +141,31 @@ DELETING A NODE
      4. Free the memory of the deleted node.  
    Time Complexity: O(1)  
    Space Complexity: O(1)  
+
+----------------------------------------------------
+
+REVERSE A DOUBLY LINKED LIST
+
+1. Initialize Variables  
+   - Start with the head of the list (`current = head`).  
+   - Maintain a temporary pointer `temp` to assist in swapping nodes.  
+
+2. Traverse and Swap  
+   - While `current != NULL`:  
+     - Swap `current->next` and `current->prev` using `temp`.  
+       temp = current->next;
+       current->next = current->prev;
+       current->prev = temp;
+     - Move to the previous node (which is now the next node after swapping):  
+       current = temp;
+
+3. Update the Head  
+   - After the loop ends, set the head of the list to the last node traversed:  
+     if (temp != NULL) 
+         head = temp->prev;
+
+Time Complexity  
+- O(N), where N is the number of nodes in the list.  
+
+Space Complexity  
+- O(1), as no extra space is used apart from temporary variables.
