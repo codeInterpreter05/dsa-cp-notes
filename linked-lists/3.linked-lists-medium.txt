@@ -1,0 +1,40 @@
+1) FINDING THE MIDDLE NODE OF A LINKED LIST
+
+Brute Force Approach
+
+1. Count the Nodes
+   - Traverse the linked list and count the total number of nodes (`count`).
+
+2. Traverse Again to the Middle
+   - Traverse the list again, stopping at the middle node (`count / 2`).
+
+3. Time Complexity
+   - O(N), where N is the number of nodes.
+
+4. Space Complexity
+   - O(1), as no extra space is used.
+
+---------------------------------------------------------------
+
+Tortoise-Hare Method
+
+1. Initialize Two Pointers
+   - Use two pointers:
+     - `slow` moves one step at a time.
+     - `fast` moves two steps at a time.
+
+2. Traverse the List
+   - While `fast != NULL` and `fast->next != NULL`:
+     - Move `slow` one step forward.
+     - Move `fast` two steps forward.
+
+3. Middle Node
+   - When `fast` reaches the end, `slow` will point to the middle node.
+
+4. Time Complexity
+   - O(N), as the list is traversed once.
+
+5. Space Complexity
+   - O(1), as no extra space is used.
+
+----------------------------------------------------
