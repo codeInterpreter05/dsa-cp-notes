@@ -14,7 +14,6 @@ Brute Force Approach
 4. Space Complexity
    - O(1), as no extra space is used.
 
----------------------------------------------------------------
 
 Tortoise-Hare Method
 
@@ -38,3 +37,80 @@ Tortoise-Hare Method
    - O(1), as no extra space is used.
 
 ----------------------------------------------------
+
+2) ADD TWO NUMBERS REPRESENTED BY LINKED LISTS
+
+Brute Force Approach
+
+1. Reverse Both Linked Lists
+   - Reverse both input linked lists.
+   
+2. Add the Digits
+   - Traverse both lists and add the digits, considering the carry.
+   - Create a new list to store the result.
+   
+3. Reverse the Result
+   - Reverse the result list before returning.
+
+4. Time Complexity
+   - O(N), where N is the maximum length of the two linked lists.
+
+5. Space Complexity
+   - O(N), where N is the number of digits in the result list.
+
+
+Optimized Approach (Without Reversing the Lists)
+
+1. Traverse Both Lists
+   - Traverse both linked lists simultaneously.
+   
+2. Add Corresponding Digits
+   - Add the digits from both lists and handle the carry.
+   - If one list is shorter, consider its missing digits as 0.
+   
+3. Create the Result List
+   - Add the sum to a new linked list.
+   
+4. Time Complexity
+   - O(N), where N is the maximum length of the two linked lists.
+
+5. Space Complexity
+   - O(N), where N is the length of the result list.
+
+-----------------------------------------------------------
+
+3) ODD EVEN LINKED LIST
+
+Brute Force Approach
+
+1. Traverse the List and Separate Odd and Even Nodes
+   - Traverse the linked list and separate the odd and even indexed nodes into two different lists.
+
+2. Merge the Lists
+   - Connect the tail of the odd list to the head of the even list.
+
+3. Time Complexity
+   - O(N), where N is the number of nodes.
+
+4. Space Complexity
+   - O(N), as extra space is used for storing even and odd lists.
+
+
+Optimized Approach (One Pass)
+
+1. Initialize Three Pointers
+   - `odd` for the head of the odd indexed list.
+   - `even` for the head of the even indexed list.
+   - `evenHead` to store the head of the even list for later.
+
+2. Traverse the List
+   - Traverse the list and rearrange the pointers such that all odd-indexed nodes are grouped together, followed by the even-indexed nodes.
+
+3. Merge the Lists
+   - Connect the last odd node to the head of the even list.
+
+4. Time Complexity
+   - O(N), where N is the number of nodes.
+
+5. Space Complexity
+   - O(1), as no extra space is used.
