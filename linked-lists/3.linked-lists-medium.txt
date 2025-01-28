@@ -114,3 +114,64 @@ Optimized Approach (One Pass)
 
 5. Space Complexity
    - O(1), as no extra space is used.
+
+
+----------------------------------------------------------------------
+
+4) SORT A LINKED LIST OF 0s, 1s, AND 2s
+
+Brute Force Approach
+
+1. Traverse the List and Count the Occurrences
+   - Traverse the linked list and count the occurrences of 0s, 1s, and 2s.
+
+2. Reconstruct the List
+   - Create a new linked list and append the correct number of 0s, 1s, and 2s in the correct order.
+
+3. Time Complexity
+   - O(N), where N is the number of nodes.
+
+4. Space Complexity
+   - O(N), as a new list is created to store the sorted nodes.
+
+
+Optimized Approach (Three-Pointer Method)
+
+1. Initialize Three Pointers and Dummy Nodes
+   - Create three dummy nodes: `zero_head`, `one_head`, and `two_head`.
+   - Create pointers `zero`, `one`, and `two` to manage these lists.
+
+2. Traverse the List and Segregate Nodes
+   - Traverse the linked list and place each node into one of the three lists based on its value.
+
+3. Merge the Three Lists
+   - Connect the tail of the 0s list to the head of the 1s list.
+   - Connect the tail of the 1s list to the head of the 2s list.
+   - Ensure the last node of the 2s list points to NULL.
+
+4. Time Complexity
+   - O(N), where N is the number of nodes.
+
+5. Space Complexity
+   - O(1), as no extra space is used apart from the dummy nodes.
+
+
+Optimized Approach (Dutch National Flag Algorithm)
+
+1. Initialize Three Pointers
+   - `low`: points to the first element of the list, for 0s.
+   - `mid`: points to the current element being processed.
+   - `high`: points to the last element of the list, for 2s.
+
+2. Traverse the List
+   - While `mid` is less than or equal to `high`:
+     - If `mid->data == 0`, swap `low` and `mid` and move both pointers forward.
+     - If `mid->data == 1`, move `mid` forward.
+     - If `mid->data == 2`, swap `mid` and `high` and move `high` backward.
+
+3. Time Complexity
+   - O(N), where N is the number of nodes.
+
+4. Space Complexity
+   - O(1), as no extra space is used.
+
