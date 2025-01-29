@@ -175,3 +175,48 @@ Optimized Approach (Dutch National Flag Algorithm)
 4. Space Complexity
    - O(1), as no extra space is used.
 
+----------------------------------------------------------
+
+5) DELETE N-th NODE FROM THE END OF A LINKED LIST
+
+Brute Force Approach
+
+1. Count the Total Nodes
+   - Traverse the linked list to count the total number of nodes (`count`).
+
+2. Find the Node to Delete
+   - The N-th node from the end is at position `(count - N + 1)` from the start.
+
+3. Traverse Again and Delete
+   - Traverse again to this position and delete the node.
+
+4. Time Complexity
+   - O(N), where N is the number of nodes.
+
+5. Space Complexity
+   - O(1), as no extra space is used.
+
+
+Optimized Approach (Two-Pointer Method)
+
+1. Initialize Two Pointers
+   - `fast` and `slow`, both pointing to the head.
+
+2. Move `fast` N Steps Ahead
+   - Move `fast` N steps ahead.
+
+3. Move Both Pointers Until `fast` Reaches the End
+   - Move `slow` and `fast` one step at a time.
+   - When `fast` reaches the last node, `slow` is at `(N+1)`-th node from the end.
+
+4. Delete the N-th Node
+   - Adjust the `next` pointer of `slow` to skip the N-th node.
+
+5. Edge Case: If N is Equal to the Length of the List
+   - If `fast` reaches NULL after moving N steps, delete the head node.
+
+6. Time Complexity
+   - O(N), as the list is traversed once.
+
+7. Space Complexity
+   - O(1), as no extra space is used.
