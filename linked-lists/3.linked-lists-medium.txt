@@ -323,3 +323,5 @@ Optimized Approach (Using Stack)
 
 4. Space Complexity
    - O(N), since we use a stack.
+
+------------------------------------------
