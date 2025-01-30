@@ -220,3 +220,51 @@ Optimized Approach (Two-Pointer Method)
 
 7. Space Complexity
    - O(1), as no extra space is used.
+
+----------------------------------------------------------
+
+6) REVERSE A LINKED LIST (ITERATIVE & RECURSIVE)
+
+Iterative Approach
+
+1. Initialize Three Pointers
+   - `prev` → Initially NULL (stores the previous node).
+   - `curr` → Initially head (tracks the current node).
+   - `next` → Stores `curr->next` before modifying it.
+
+2. Traverse the List
+   - While `curr` is not NULL:
+     - Store `curr->next` in `next`.
+     - Reverse the link: `curr->next = prev`.
+     - Move `prev` and `curr` one step forward.
+
+3. Update Head
+   - The `prev` pointer will be at the new head after traversal.
+
+4. Time Complexity
+   - O(N), as each node is visited once.
+
+5. Space Complexity
+   - O(1), as no extra space is used.
+
+
+Recursive Approach
+
+1. Base Case
+   - If `head` is NULL or only one node exists, return `head`.
+
+2. Reverse the Rest of the List
+   - Recursively call `reverse(head->next)`, which reverses all nodes after `head`.
+
+3. Adjust Pointers
+   - Set `head->next->next = head` to reverse the link.
+   - Set `head->next = NULL` to prevent cycles.
+
+4. Return the New Head
+   - The last node becomes the new head.
+
+5. Time Complexity
+   - O(N), as each node is processed once.
+
+6. Space Complexity
+   - O(N), due to recursive call stack usage.
