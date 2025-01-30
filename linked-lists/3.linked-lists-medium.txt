@@ -268,3 +268,58 @@ Recursive Approach
 
 6. Space Complexity
    - O(N), due to recursive call stack usage.
+
+---------------------------------------------------------
+
+7) CHECK IF A LINKED LIST IS A PALINDROME
+
+Brute Force Approach (Using Extra Space)
+
+1. Copy Elements to an Array
+   - Traverse the linked list and store all values in an array.
+
+2. Check for Palindrome
+   - Use two pointers (`start` and `end`) to compare values from both ends.
+
+3. Time Complexity
+   - O(N), as we traverse the list once.
+
+4. Space Complexity
+   - O(N), since we use an extra array.
+
+
+Optimized Approach (Using Reverse Half Method)
+
+1. Find the Middle of the List
+   - Use the **Tortoise-Hare method** to find the middle node.
+
+2. Reverse the Second Half
+   - Reverse the second half of the linked list.
+
+3. Compare Both Halves
+   - Compare the first half with the reversed second half.
+
+4. Restore the Original List (Optional)
+   - Reverse the second half back to restore the original list.
+
+5. Time Complexity
+   - O(N), as we traverse the list multiple times.
+
+6. Space Complexity
+   - O(1), since we only use a few extra pointers.
+
+
+Optimized Approach (Using Stack)
+
+1. Push First Half Elements to a Stack
+   - Use **Tortoise-Hare method** to reach the middle.
+   - Push elements from the first half onto a stack.
+
+2. Compare Stack with the Second Half
+   - Continue traversing the second half and compare with popped elements.
+
+3. Time Complexity
+   - O(N), as we traverse the list twice.
+
+4. Space Complexity
+   - O(N), since we use a stack.
