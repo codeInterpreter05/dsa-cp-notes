@@ -367,3 +367,25 @@ Optimized Approach (Reverse, Add, and Reverse Back)
 
 6. Space Complexity
    - O(1), since we only use extra pointers.
+
+
+Most Optimal Approach (Using Recursion)
+
+1. Base Case
+   - If `head` is NULL, return 1 (carry).
+
+2. Recursively Add 1 to the Next Node
+   - Call `addOne(head->next)` and store the returned carry.
+
+3. Update Current Node
+   - Add carry to `head->data`.
+   - If `head->data` becomes 10, set it to 0 and return a carry of 1.
+
+4. Handle Carry at the First Node
+   - If a carry remains after recursion, insert a new node at the beginning.
+
+5. Time Complexity
+   - O(N), as each node is visited once.
+
+6. Space Complexity
+   - O(N), due to the recursive call stack.
