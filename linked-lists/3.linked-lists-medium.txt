@@ -324,4 +324,46 @@ Optimized Approach (Using Stack)
 4. Space Complexity
    - O(N), since we use a stack.
 
-------------------------------------------
+-------------------------------------------------
+
+8) ADD 1 TO A NUMBER REPRESENTED BY A LINKED LIST
+
+Brute Force Approach (Using a Stack)
+
+1. Push Digits into a Stack
+   - Traverse the list and push all digits onto a stack.
+
+2. Add 1 to the Last Digit
+   - Pop elements from the stack and add 1 to the last digit.
+   - Handle carry propagation.
+
+3. Create a New Linked List
+   - Construct a new linked list with updated digits.
+
+4. Time Complexity
+   - O(N), as we traverse the list twice.
+
+5. Space Complexity
+   - O(N), due to the extra stack.
+
+
+Optimized Approach (Reverse, Add, and Reverse Back)
+
+1. Reverse the Linked List
+   - Reverse the linked list to process from the least significant digit.
+
+2. Add 1 to the First Node
+   - Start adding 1 from the first node.
+   - Handle carry propagation.
+
+3. Reverse the List Back
+   - Reverse again to restore the original order.
+
+4. Edge Case: Carry at the Last Node
+   - If there's a carry after the last node, create a new head node with `1`.
+
+5. Time Complexity
+   - O(N), as we traverse the list multiple times.
+
+6. Space Complexity
+   - O(1), since we only use extra pointers.
