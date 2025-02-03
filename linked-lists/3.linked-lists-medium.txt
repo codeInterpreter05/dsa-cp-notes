@@ -390,6 +390,7 @@ Most Optimal Approach (Using Recursion)
 6. Space Complexity
    - O(N), due to the recursive call stack.
 
+---------------------------------------------------------------
 
 9) FIND INTERSECTION OF TWO LINKED LISTS
 
@@ -447,6 +448,7 @@ Most Optimal Approach (Using Two Pointers)
 6. Space Complexity
    - O(1), since only two pointers are used.
 
+---------------------------------------------------------------
 
 10) FIND AND DELETE THE MIDDLE NODE OF A LINKED LIST
 
@@ -491,6 +493,7 @@ Optimized Approach (Using Two Pointers - Tortoise-Hare Method)
 6. Space Complexity
    - O(1), since only extra pointers are used.
 
+--------------------------------------------------------------
 
 11) DETECT A LOOP IN A LINKED LIST
 
@@ -527,6 +530,7 @@ Optimal Approach (Floyd’s Cycle Detection Algorithm - Tortoise-Hare Method)
 5. Space Complexity
    - O(1), as only two pointers are used.
 
+----------------------------------------------------------
 
 12) FIND THE LENGTH OF A LOOP IN A LINKED LIST
 
@@ -550,6 +554,7 @@ Approach (Using Floyd’s Cycle Detection Algorithm)
 5. Space Complexity
    - O(1), since only two pointers are used.
 
+----------------------------------------------------------
 
 13) DETECT THE STARTING NODE OF THE CYCLE IN A LINKED LIST
 
