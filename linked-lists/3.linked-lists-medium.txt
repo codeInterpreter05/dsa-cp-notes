@@ -448,3 +448,45 @@ Most Optimal Approach (Using Two Pointers)
    - O(1), since only two pointers are used.
 
 
+10) FIND AND DELETE THE MIDDLE NODE OF A LINKED LIST
+
+Brute Force Approach (Two Passes)
+
+1. Count the Nodes
+   - Traverse the list and count the total number of nodes (`count`).
+
+2. Traverse Again to the Middle
+   - Traverse the list again up to `(count / 2) - 1` position.
+   - Update the `next` pointer of the previous node to skip the middle node.
+
+3. Edge Cases
+   - If the list has only one node, return NULL.
+
+4. Time Complexity
+   - O(N), since the list is traversed twice.
+
+5. Space Complexity
+   - O(1), as no extra space is used.
+
+
+Optimized Approach (Using Two Pointers - Tortoise-Hare Method)
+
+1. Initialize Two Pointers
+   - `slow` moves one step at a time.
+   - `fast` moves two steps at a time.
+   - Maintain a `prev` pointer to track the node before `slow`.
+
+2. Traverse the List
+   - Move `slow` and `fast` until `fast` reaches the end.
+
+3. Delete the Middle Node
+   - Update `prev->next = slow->next` to remove the middle node.
+
+4. Edge Cases
+   - If the list has only one node, return NULL.
+
+5. Time Complexity
+   - O(N), as the list is traversed once.
+
+6. Space Complexity
+   - O(1), since only extra pointers are used.
