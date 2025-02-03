@@ -490,3 +490,39 @@ Optimized Approach (Using Two Pointers - Tortoise-Hare Method)
 
 6. Space Complexity
    - O(1), since only extra pointers are used.
+
+
+11) DETECT A LOOP IN A LINKED LIST
+
+Brute Force Approach (Using Hashing)
+
+1. Store Visited Nodes
+   - Traverse the linked list and store each node’s address in a HashSet.
+
+2. Check for Repetition
+   - If a node appears again, a loop exists.
+
+3. Time Complexity
+   - O(N), since each node is visited once.
+
+4. Space Complexity
+   - O(N), as extra space is used for storing nodes.
+
+
+Optimal Approach (Floyd’s Cycle Detection Algorithm - Tortoise-Hare Method)
+
+1. Use Two Pointers
+   - `slow` moves one step at a time.
+   - `fast` moves two steps at a time.
+
+2. Detect a Loop
+   - If `slow` and `fast` meet, a loop is present.
+
+3. Edge Cases
+   - If `fast` reaches NULL, there is no loop.
+
+4. Time Complexity
+   - O(N), as we traverse the list once.
+
+5. Space Complexity
+   - O(1), as only two pointers are used.
