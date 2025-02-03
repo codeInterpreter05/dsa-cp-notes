@@ -389,3 +389,62 @@ Most Optimal Approach (Using Recursion)
 
 6. Space Complexity
    - O(N), due to the recursive call stack.
+
+
+9) FIND INTERSECTION OF TWO LINKED LISTS
+
+Brute Force Approach (Using Nested Loops)
+
+1. Traverse List A
+   - For each node in List A, traverse List B and check if any node matches.
+
+2. If a Match is Found
+   - The intersection node is found.
+
+3. Time Complexity
+   - O(N * M), where N and M are the lengths of the two lists.
+
+4. Space Complexity
+   - O(1), since no extra space is used.
+
+
+Optimized Approach (Using Hashing)
+
+1. Store Nodes of One List in a HashSet
+   - Traverse List A and store its nodes in a HashSet.
+
+2. Traverse List B
+   - For each node in List B, check if it exists in the HashSet.
+
+3. If a Match is Found
+   - That is the intersection node.
+
+4. Time Complexity
+   - O(N + M), as we traverse both lists once.
+
+5. Space Complexity
+   - O(N), for storing List A’s nodes in a HashSet.
+
+
+Most Optimal Approach (Using Two Pointers)
+
+1. Find the Lengths of Both Lists
+   - Traverse both lists to find their lengths.
+
+2. Align the Starting Points
+   - Move the pointer of the longer list ahead by the length difference.
+
+3. Traverse Both Lists Simultaneously
+   - Move both pointers one step at a time until they meet.
+
+4. Intersection Node
+   - If they meet, return the intersection node.
+   - If no intersection exists, return NULL.
+
+5. Time Complexity
+   - O(N + M), as we traverse both lists once.
+
+6. Space Complexity
+   - O(1), since only two pointers are used.
+
+
