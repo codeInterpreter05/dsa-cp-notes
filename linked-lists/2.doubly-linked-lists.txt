@@ -169,3 +169,34 @@ Time Complexity
 
 Space Complexity  
 - O(1), as no extra space is used apart from temporary variables.
+
+
+--------------------------------------------------------------------------
+
+
+1) DELETE ALL NODES WITH A GIVEN KEY VALUE IN A DOUBLY LINKED LIST
+
+Approach
+
+1. Traverse the List
+   - Start from the head and iterate through the list.
+
+2. Identify Nodes with the Given Key
+   - If `current->data == key`, delete the node.
+
+3. Deletion Steps
+   - If the node is the head, update the head.
+   - If the node has a previous node, update `prev->next`.
+   - If the node has a next node, update `next->prev`.
+   - Free the node and move to the next one.
+
+4. Edge Cases
+   - The list is empty.
+   - The key is not present in the list.
+   - All nodes contain the key.
+
+5. Time Complexity
+   - O(N), as we traverse the list once.
+
+6. Space Complexity
+   - O(1), since no extra space is used.
