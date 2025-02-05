@@ -237,3 +237,41 @@ Optimal Approach (Using Two Pointers)
 
 5. Space Complexity
    - O(1), since only two pointers are used.
+
+---------------------------------------------------
+
+3) REMOVE DUPLICATES FROM A DOUBLY LINKED LIST
+
+Approach (For Sorted Doubly Linked List)
+
+1. Traverse the List
+   - Start from the head and check for consecutive duplicate nodes.
+
+2. Delete Duplicates
+   - If `current->data == current->next->data`:
+     - Update `current->next` to skip the duplicate.
+     - Update `next->prev` to maintain the doubly linked structure.
+     - Free the duplicate node.
+
+3. Edge Cases
+   - The list is empty or has only one node.
+   - No duplicates exist in the list.
+
+4. Time Complexity
+   - O(N), since we traverse the list once.
+
+5. Space Complexity
+   - O(1), as no extra space is used.
+
+
+Approach (For Unsorted Doubly Linked List)
+
+1. Use Hashing
+   - Traverse the list while storing seen values in a HashSet.
+   - If a duplicate is found, delete the node.
+
+2. Time Complexity
+   - O(N), since we traverse the list once.
+
+3. Space Complexity
+   - O(N), due to extra storage in the HashSet.
