@@ -200,3 +200,40 @@ Approach
 
 6. Space Complexity
    - O(1), since no extra space is used.
+
+--------------------------------------------------
+
+2) FIND PAIRS WITH A GIVEN SUM IN A DOUBLY LINKED LIST
+
+Brute Force Approach
+
+1. Use Nested Loops
+   - Pick each node and check for a complement that sums to the target.
+
+2. Time Complexity
+   - O(N²), as each node is compared with every other node.
+
+3. Space Complexity
+   - O(1), as no extra space is used.
+
+
+Optimal Approach (Using Two Pointers)
+
+1. Find Left and Right Pointers
+   - Set `left` to the head.
+   - Set `right` to the last node (tail).
+
+2. Use Two-Pointer Technique
+   - If `left->data + right->data == target`, store the pair and move both pointers.
+   - If the sum is less than `target`, move `left` forward.
+   - If the sum is greater than `target`, move `right` backward.
+
+3. Edge Cases
+   - List is empty or has only one node.
+   - No valid pairs exist.
+
+4. Time Complexity
+   - O(N), since each node is visited at most once.
+
+5. Space Complexity
+   - O(1), since only two pointers are used.
