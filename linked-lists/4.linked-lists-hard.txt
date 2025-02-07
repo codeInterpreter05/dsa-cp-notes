@@ -86,3 +86,46 @@ Optimal Approach
 
 6. Space Complexity
    - O(1), since rotation is done in place.
+
+---------------------------------------------------------
+
+3) MERGE TWO SORTED LINKED LISTS
+
+Brute Force Approach
+
+1. Store Nodes in an Array
+   - Traverse both lists and store all nodes in an array.
+
+2. Sort the Array
+   - Sort the array based on node values.
+
+3. Reconstruct the Linked List
+   - Reconnect the nodes in sorted order.
+
+4. Time Complexity
+   - O(N log N), due to sorting.
+
+5. Space Complexity
+   - O(N), as extra space is used for the array.
+
+
+Optimal Approach (Two-Pointer Method)
+
+1. Initialize Pointers
+   - Use two pointers (`l1` and `l2`) for both lists.
+   - Create a dummy node to store the result.
+
+2. Merge Step
+   - Compare `l1->data` and `l2->data`:
+     - Append the smaller node to the result list.
+     - Move the pointer forward in the selected list.
+   - Continue until one list is fully traversed.
+
+3. Append Remaining Nodes
+   - If any nodes are left in `l1` or `l2`, append them.
+
+4. Time Complexity
+   - O(N), as each node is visited once.
+
+5. Space Complexity
+   - O(1), as merging is done in place.
