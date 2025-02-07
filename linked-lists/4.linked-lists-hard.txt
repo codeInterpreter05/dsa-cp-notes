@@ -46,3 +46,43 @@ Optimal Approach (In-Place Reversal)
 
 6. Space Complexity
    - O(1), since reversal is done in place.
+
+----------------------------------------------------------
+
+2) ROTATE A LINKED LIST BY K TIMES
+
+Brute Force Approach
+
+1. Rotate One Node at a Time
+   - For each of the `k` rotations:
+     - Traverse to the last node.
+     - Make the last node the new head and update pointers.
+
+2. Time Complexity
+   - O(k * N), since we traverse the list `k` times.
+
+3. Space Complexity
+   - O(1), as no extra space is used.
+
+
+Optimal Approach
+
+1. Find the Length
+   - Traverse the list to get the total number of nodes (`N`).
+
+2. Optimize k
+   - Since rotating `N` times results in the same list, update `k = k % N`.
+
+3. Find the New Head
+   - Traverse to the `(N-k)th` node.
+   - Update its `next` to NULL (new tail).
+   - The next node becomes the new head.
+
+4. Update the Last Node
+   - Connect the last node to the old head.
+
+5. Time Complexity
+   - O(N), as we traverse the list only twice.
+
+6. Space Complexity
+   - O(1), since rotation is done in place.
