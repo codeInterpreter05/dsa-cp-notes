@@ -1,0 +1,48 @@
+1) REVERSE NODES IN K-GROUPS IN A DOUBLY LINKED LIST
+
+Brute Force Approach
+
+1. Store Nodes in an Array
+   - Traverse the list and store all node addresses in an array.
+
+2. Reverse in Groups
+   - Iterate through the array in groups of `k`, reversing the connections manually.
+
+3. Reconnect the List
+   - Update `next` and `prev` pointers for all nodes after reversing.
+
+4. Edge Cases
+   - If `k == 1`, no reversal is needed.
+   - If the list has fewer than `k` nodes, return as is.
+
+5. Time Complexity
+   - O(N), as we traverse and process each node once.
+
+6. Space Complexity
+   - O(N), due to storing all node addresses in an array.
+
+
+Optimal Approach (In-Place Reversal)
+
+1. Traverse and Count Nodes
+   - Count the number of nodes to check if k-group reversal is possible.
+
+2. Reverse k Nodes Iteratively
+   - For each group of `k` nodes:
+     - Swap `next` and `prev` pointers within the group.
+     - Update `prev_group_tail->next` to connect groups.
+   - Move to the next group.
+
+3. Handle Remaining Nodes
+   - If the remaining nodes are less than `k`, keep them as is.
+
+4. Edge Cases
+   - The list has fewer than `k` nodes.
+   - `k == 1`, meaning no change.
+   - The list is empty.
+
+5. Time Complexity
+   - O(N), as each node is visited once.
+
+6. Space Complexity
+   - O(1), since reversal is done in place.
