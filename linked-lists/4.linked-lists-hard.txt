@@ -129,3 +129,47 @@ Optimal Approach (Two-Pointer Method)
 
 5. Space Complexity
    - O(1), as merging is done in place.
+
+-----------------------------------------------------------
+
+4) FLATTEN A LINKED LIST
+
+Brute Force Approach
+
+1. Store All Nodes in an Array
+   - Traverse all `next` and `bottom` pointers.
+   - Store all nodes in an array.
+
+2. Sort the Array
+   - Sort the array based on node values.
+
+3. Reconstruct the List
+   - Link all nodes sequentially using only the `bottom` pointer.
+   - Set `next` pointers to NULL.
+
+4. Time Complexity
+   - O(N log N), due to sorting.
+
+5. Space Complexity
+   - O(N), for storing nodes in an array.
+
+
+Optimal Approach (Merge with Divide & Conquer)
+
+1. Recursively Flatten
+   - Flatten the right (`next`) list first.
+
+2. Merge Two Lists
+   - Use the **merge two sorted lists** approach to merge the current node’s `bottom` list with the already flattened right list.
+
+3. Return the Merged List
+   - Ensure all `next` pointers are set to NULL.
+
+4. Time Complexity
+   - O(N), since each node is visited once.
+
+5. Space Complexity
+   - O(1), since merging is done in place.
+
+--------------------------------------------------
+
