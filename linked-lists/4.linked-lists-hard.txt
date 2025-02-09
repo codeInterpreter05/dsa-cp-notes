@@ -173,3 +173,60 @@ Optimal Approach (Merge with Divide & Conquer)
 
 --------------------------------------------------
 
+5) MERGE K SORTED LINKED LISTS
+
+Brute Force Approach
+
+1. Store All Nodes in an Array
+   - Traverse all `k` lists and store all nodes in an array.
+
+2. Sort the Array
+   - Sort the array based on node values.
+
+3. Reconstruct the List
+   - Link all nodes sequentially.
+
+4. Time Complexity
+   - O(N log N), due to sorting (`N` is the total number of nodes).
+
+5. Space Complexity
+   - O(N), for storing nodes in an array.
+
+
+Optimal Approach 1 (Min Heap / Priority Queue)
+
+1. Push First Nodes into Min Heap
+   - Use a min-heap (priority queue) to store the first node of each list.
+   - Min-heap automatically keeps the smallest element at the top.
+
+2. Extract Min and Add Next Node
+   - Extract the smallest node from the heap.
+   - Append it to the result list.
+   - If the extracted node has a `next`, push it into the heap.
+
+3. Continue Until Heap is Empty
+   - Process all nodes until the heap is empty.
+
+4. Time Complexity
+   - O(N log K), where `K` is the number of lists.
+
+5. Space Complexity
+   - O(K), for storing `K` nodes in the heap.
+
+
+Optimal Approach 2 (Divide & Conquer)
+
+1. Pairwise Merge
+   - Recursively merge two lists at a time.
+
+2. Reduce Lists in Logarithmic Steps
+   - Merge `K` lists into `K/2` lists, then `K/4`, and so on.
+
+3. Continue Until One List Remains
+   - The last merged list is the final sorted list.
+
+4. Time Complexity
+   - O(N log K), since we merge `K` lists in `log K` steps.
+
+5. Space Complexity
+   - O(1), as merging is done in place.
