@@ -577,3 +577,63 @@ Approach (Using Floyd’s Cycle Detection Algorithm)
 
 5. Space Complexity
    - O(1), since only two pointers are used.
+
+-----------------------------------------------------------------
+
+14) SORTING A LINKED LIST
+
+Brute Force Approach (Using Array)
+
+1. Store All Nodes in an Array
+   - Traverse the linked list and store all values in an array.
+
+2. Sort the Array
+   - Sort the array using a built-in sorting algorithm (O(N log N)).
+
+3. Reconstruct the Linked List
+   - Traverse the sorted array and update the linked list.
+
+4. Time Complexity
+   - O(N log N), due to sorting.
+
+5. Space Complexity
+   - O(N), for storing values in an array.
+
+
+Optimal Approach 1 (Merge Sort for Linked List)
+
+1. Find the Middle Node
+   - Use the **Tortoise-Hare method** to find the middle.
+
+2. Split the List
+   - Divide the list into two halves.
+
+3. Recursively Sort Each Half
+   - Sort both halves using **merge sort**.
+
+4. Merge Two Sorted Lists
+   - Use the **merge two sorted lists** approach.
+
+5. Time Complexity
+   - O(N log N), as merge sort divides and merges.
+
+6. Space Complexity
+   - O(log N), due to recursion stack.
+
+
+Optimal Approach 2 (Quick Sort for Linked List)
+
+1. Choose a Pivot
+   - Select a pivot (e.g., last node).
+
+2. Partition the List
+   - Reorder nodes around the pivot.
+
+3. Recursively Sort Partitions
+   - Sort the left and right partitions separately.
+
+4. Time Complexity
+   - O(N log N), in the average case.
+
+5. Space Complexity
+   - O(log N), due to recursion stack.
