@@ -252,7 +252,6 @@ Brute Force Approach (Using Hash Map)
 5. Space Complexity
    - O(N), for storing the mapping in a hash map.
 
-
 Optimal Approach (O(1) Extra Space)
 
 1. Insert Copied Nodes in Between
