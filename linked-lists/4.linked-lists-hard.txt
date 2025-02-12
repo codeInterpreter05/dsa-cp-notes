@@ -230,3 +230,43 @@ Optimal Approach 2 (Divide & Conquer)
 
 5. Space Complexity
    - O(1), as merging is done in place.
+
+-------------------------------------------------------------
+
+6) CLONE A LINKED LIST WITH RANDOM AND NEXT POINTERS
+
+Brute Force Approach (Using Hash Map)
+
+1. Create a Copy of Each Node
+   - Traverse the original list and create a copy of each node.
+
+2. Store Mapping in a Hash Map
+   - Use a hash map to store the mapping between original and copied nodes.
+
+3. Set Next and Random Pointers
+   - Traverse the list again to assign `next` and `random` pointers using the hash map.
+
+4. Time Complexity
+   - O(N), as we traverse the list twice.
+
+5. Space Complexity
+   - O(N), for storing the mapping in a hash map.
+
+
+Optimal Approach (O(1) Extra Space)
+
+1. Insert Copied Nodes in Between
+   - Traverse the list and create a copy of each node.
+   - Insert each copied node right after the original node.
+
+2. Set Random Pointers
+   - Use the interleaved structure to assign the correct `random` pointers.
+
+3. Separate the Two Lists
+   - Restore the original list and extract the cloned list.
+
+4. Time Complexity
+   - O(N), as we traverse the list multiple times.
+
+5. Space Complexity
+   - O(1), as no extra data structures are used.
