@@ -269,3 +269,52 @@ Optimal Approach (O(1) Extra Space)
 
 5. Space Complexity
    - O(1), as no extra data structures are used.
+
+---------------------------------------------------
+7) DESIGNING BROWSER HISTORY
+
+Problem Statement:
+   - Implement a browser history system that supports:
+     1. Visiting a new URL.
+     2. Going **back** a certain number of steps.
+     3. Going **forward** a certain number of steps.
+
+Brute Force Approach (Using Array/List)
+
+1. Maintain an Array/List
+   - Store visited URLs in an array.
+   - Keep an index pointer to track the current page.
+
+2. Back and Forward Operations
+   - Move the index pointer accordingly.
+   - If back steps exceed history, move to the first page.
+   - If forward steps exceed available pages, move to the last page.
+
+3. Time Complexity
+   - O(1) for visiting a page.
+   - O(1) for back/forward (simple index movement).
+
+4. Space Complexity
+   - O(N), where N is the number of visited pages.
+
+
+Optimal Approach (Using Doubly Linked List)
+
+1. Use a Doubly Linked List (DLL)
+   - Each node represents a visited page.
+   - `prev` and `next` pointers track back and forward history.
+
+2. Visiting a New Page
+   - If the user visits a new URL, remove all forward history.
+
+3. Back and Forward Operations
+   - Move left (`prev`) for back operation.
+   - Move right (`next`) for forward operation.
+
+4. Time Complexity
+   - O(1) for visiting a page.
+   - O(1) for back/forward operations.
+
+5. Space Complexity
+   - O(N), where N is the number of visited pages.
+
