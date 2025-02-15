@@ -1,0 +1,41 @@
+1) GENERATE ALL SUBSEQUENCES
+
+Problem Statement  
+- Given a string or array, generate all possible subsequences (subsets while maintaining order).
+
+Brute Force Approach (Using Bit Manipulation)
+
+1. Generate All Binary Masks
+   - There are `2^N` possible subsequences.
+   - Each bit represents whether to include an element.
+
+2. Construct Subsequences
+   - Iterate over all `2^N` combinations.
+   - If the `i-th` bit is set, include the corresponding element.
+
+3. Time Complexity
+   - O(N * 2^N), as we generate `2^N` subsets, each taking O(N) time.
+
+4. Space Complexity
+   - O(1) (excluding output storage).
+
+
+Optimal Approach (Using Recursion)
+
+1. Recursive Function  
+   - At each step, decide whether to include the current element.
+
+2. Base Case  
+   - When we reach the end of the string/array, store the current subsequence.
+
+3. Recursive Calls  
+   - Include the current element and recurse.
+   - Exclude the current element and recurse.
+
+4. Time Complexity  
+   - O(2^N), as each element has two choices.
+
+5. Space Complexity  
+   - O(N), due to recursive call stack.
+
+
