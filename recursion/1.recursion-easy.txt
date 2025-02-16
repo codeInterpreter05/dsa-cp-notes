@@ -38,4 +38,48 @@ Optimal Approach (Using Recursion)
 5. Space Complexity  
    - O(N), due to recursive call stack.
 
+-------------------------------------------------------------------
 
+2) COUNT SUBSEQUENCES WITH SUM K
+
+Problem Statement  
+- Given an array and an integer K, find the number of subsequences whose sum is exactly K.
+
+Brute Force Approach (Using Power Set)
+
+1. Generate All Subsequences  
+   - Use bit manipulation or recursion to generate all subsequences.
+
+2. Check Sum Condition  
+   - For each subsequence, compute its sum.
+   - If the sum equals K, increment the count.
+
+3. Time Complexity  
+   - O(N * 2^N), as we generate `2^N` subsequences and compute their sum in O(N).
+
+4. Space Complexity  
+   - O(1), excluding output storage.
+
+
+Optimal Approach (Using Recursion)
+
+1. Recursive Function  
+   - At each step, decide whether to include the current element.
+
+2. Base Case  
+   - If we reach the end of the array:
+     - If `sum == K`, return 1.
+     - Else, return 0.
+
+3. Recursive Calls  
+   - Include the current element (`sum + arr[i]`).
+   - Exclude the current element (`sum` remains unchanged).
+
+4. Return the Total Count  
+   - Count subsequences from both recursive calls.
+
+5. Time Complexity  
+   - O(2^N), as each element has two choices.
+
+6. Space Complexity  
+   - O(N), due to recursive call stack.
