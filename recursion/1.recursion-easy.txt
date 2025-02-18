@@ -85,3 +85,47 @@ Optimal Approach (Using Recursion)
    - O(N), due to recursive call stack.
 
 -----------------------------------------------
+
+3) COMBINATION SUM
+
+Problem Statement  
+- Given an array of distinct integers and a target sum K, find all unique combinations where the chosen numbers sum to K.  
+- Each number can be used multiple times.
+
+Brute Force Approach (Using Power Set)
+
+1. Generate All Subsequences  
+   - Use bit manipulation or recursion to generate all possible subsequences.
+
+2. Check Sum Condition  
+   - For each subsequence, compute its sum.
+   - If the sum equals K, store it.
+
+3. Time Complexity  
+   - O(N * 2^N), as we generate `2^N` subsequences and compute their sum in O(N).
+
+4. Space Complexity  
+   - O(N) for storing results (excluding recursion stack).
+
+
+Optimal Approach (Using Recursion & Backtracking)
+
+1. Recursive Function  
+   - Maintain an index and current sum.
+   - Try including the same element multiple times.
+
+2. Base Case  
+   - If `sum == K`, store the combination.
+   - If `sum > K` or index goes out of bounds, return.
+
+3. Recursive Calls  
+   - Include `arr[i]` (keep index same, as repetition is allowed).
+   - Exclude `arr[i]` (move to `i + 1` to avoid duplicate counts).
+
+4. Time Complexity  
+   - O(2^T * K), where T is the target sum and K is the average subset length.
+
+5. Space Complexity  
+   - O(K), for storing intermediate results in the recursion stack.
+
+Backtracking ensures that we efficiently explore valid paths while avoiding unnecessary computations. 🚀 Let me know if you need a code example!
