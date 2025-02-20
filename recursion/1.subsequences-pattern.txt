@@ -129,3 +129,50 @@ Optimal Approach (Using Recursion & Backtracking)
    - O(K), for storing intermediate results in the recursion stack.
 
 ------------------------------------------------------------------------
+
+4) COMBINATION SUM II (Each Number Can Be Used Only Once)
+
+Problem Statement  
+- Given a collection of integers (which may contain duplicates) and a target sum K, find all unique combinations where the chosen numbers sum to K.  
+- Each number can be used **only once** in a combination.
+
+Brute Force Approach (Generating All Subsequences)
+
+1. Generate All Subsequences  
+   - Use recursion to generate all subsets of the given array.
+
+2. Check Sum Condition  
+   - Compute the sum of each subset.
+   - If the sum is equal to K, store the subset.
+
+3. Handle Duplicates  
+   - Sort the array and use a **set** to store unique subsequences.
+
+4. Time Complexity  
+   - O(2^N * N), as we generate `2^N` subsets and check their sum.
+
+5. Space Complexity  
+   - O(N) for storing subsets (excluding recursion stack).
+
+
+Optimal Approach (Recursion + Backtracking with Sorting)
+
+1. **Sort the Array**  
+   - Sorting helps in **handling duplicates** efficiently.
+
+2. **Recursive Function**  
+   - Maintain an index and current sum.
+   - Include `arr[i]` and move to `i + 1` (since repetition is not allowed).
+   - Skip duplicate elements (`arr[i] == arr[i - 1]`) to avoid duplicate subsequences.
+
+3. **Base Case**  
+   - If `sum == K`, store the combination.
+   - If `sum > K` or `index == N`, return.
+
+4. **Time Complexity**  
+   - O(2^N), as we explore subsets with pruning.
+
+5. **Space Complexity**  
+   - O(K), for recursion stack.
+
+By sorting and skipping duplicates, we efficiently generate unique valid combinations. 🚀 Let me know if you need a code example!
