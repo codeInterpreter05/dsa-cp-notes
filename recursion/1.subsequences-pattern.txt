@@ -176,3 +176,48 @@ Optimal Approach (Recursion + Backtracking with Sorting)
    - O(K), for recursion stack.
 
 --------------------------------------------------------------
+
+5) SUBSET SUM 1
+
+Problem Statement  
+- Given an array of integers, find all possible subset sums.  
+- Return the subset sums in **non-decreasing order**.
+
+Brute Force Approach (Generating All Subsequences)
+
+1. **Generate All Subsequences**  
+   - Use recursion to generate all subsets.
+   - Maintain a variable to store the sum of the current subset.
+
+2. **Base Case**  
+   - If the index reaches the end of the array, store the sum.
+
+3. **Recursive Calls**  
+   - Include the current element in the sum.
+   - Exclude the current element from the sum.
+
+4. **Sort the Result**  
+   - The final output should be in non-decreasing order.
+
+5. **Time Complexity**  
+   - O(2^N + 2^N log(2^N)), as we generate `2^N` subsets and then sort them.
+
+6. **Space Complexity**  
+   - O(2^N), for storing the subset sums.
+
+Optimal Approach (Recursion + Backtracking)
+
+1. **Sorting Not Required**  
+   - Instead of sorting, insert values in a **sorted order** while computing.
+
+2. **Recursive Function**  
+   - Keep track of the current sum and index.
+   - Add sums directly to the result list.
+
+3. **Time Complexity**  
+   - O(2^N), as we generate all subsets.
+
+4. **Space Complexity**  
+   - O(N) for recursion stack.
+
+This approach efficiently finds all subset sums using recursion. 🚀 Let me know if you need a code example!
