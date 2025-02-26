@@ -175,7 +175,7 @@ Optimal Approach (Recursion + Backtracking with Sorting)
 5. **Space Complexity**  
    - O(K), for recursion stack.
 
---------------------------------------------------------------
+-----------------------------------------------------------------
 
 5) SUBSET SUM 1
 
@@ -220,4 +220,4 @@ Optimal Approach (Recursion + Backtracking)
 4. **Space Complexity**  
    - O(N) for recursion stack.
 
---------------------------------------------------
+-----------------------------------------------------
